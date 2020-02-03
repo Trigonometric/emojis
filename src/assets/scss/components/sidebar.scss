@@ -1,0 +1,30 @@
+.sidebar {	
+	background: $bg-red;
+
+	@media(min-width: 768px){
+		padding-top: 20px;
+	}
+
+	&__search {
+		height: 60px;
+		width: 100%;
+		margin-bottom: 10px;
+
+		@media(min-width: 768px){
+			display: none !important;
+		}
+	}
+
+	&__ref {
+		display: flex;
+		padding: 5px 20px;
+		cursor: pointer;
+		transition: background .3s;
+		text-decoration: none;
+		color: white;
+
+		&:hover, &_active {
+			background: rgba(0,0,0,.1);
+		}
+	}
+}

@@ -1,0 +1,6 @@
+<div class="emoji-list emoji-list_all" infiniteScroll [infiniteScrollDistance]="0.5" [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
+	<span *ngIf="!emojis.length">Emoji не найдены</span>
+	<ng-container *ngFor="let emo of emojis.slice(0, page * pageSize)">
+		<app-emoji [emoji]="emo" location="search" class="emoji-list__item-wrap"></app-emoji>	
+	</ng-container>
+</div>

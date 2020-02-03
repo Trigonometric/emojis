@@ -1,0 +1,4 @@
+<div class="emoji-list emoji-list_fav" infiniteScroll [infiniteScrollDistance]="0.5" [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
+	<span *ngIf="!emojis.length">Любимые emoji отсутствуют</span>
+	<app-emoji class="emoji-list__item-wrap" *ngFor="let emo of emojis.slice(0, page * pageSize)" [emoji]="emo" location="fav"></app-emoji>
+</div>

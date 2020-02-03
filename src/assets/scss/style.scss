@@ -1,0 +1,15 @@
+* {
+	margin: 0; 
+	padding: 0; 
+	font-family: Roboto; 
+	box-sizing: border-box;
+}
+
+$bg-red: #ef5350;
+
+@import 'components/app';
+@import 'components/sidebar';
+@import 'components/search-form';
+@import 'components/header';
+@import 'components/emoji';
+@import 'components/emoji-list';

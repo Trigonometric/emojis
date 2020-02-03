@@ -1,0 +1,25 @@
+<div class="emoji-list__item emoji">
+	<div class="emoji__cell emoji__cell_name">
+		<div class="emoji__text">{{ emoji.name }}</div>
+	</div>
+	<div class="emoji__cell emoji__cell_ref">
+		<div class="emoji__text">
+			<a class="emoji__text-ref" [href]="emoji.ref" target="_blank">{{ emoji.ref }}</a>		
+		</div>
+		<a class="emoji__icon-ref" [href]="emoji.ref" target="_blank">
+			<img src="assets/img/out.svg" class="emoji__icon-ref-pic">
+		</a>
+	</div>
+	<div class="emoji__cell emoji__cell_pic">
+		<img [src]="emoji.ref" [alt]="'Emoji ' + emoji.name" class="emoji__pic">
+	</div>
+	<div *ngIf="location === 'all' || location === 'search'" class="emoji__cell emoji__cell_fav">
+		<span class="emoji__star" [ngClass]="{'emoji__star_fav': emoji.fav}" (click)="toggleFav()">★</span>
+	</div>
+	<div *ngIf="!emoji.deleted" class="emoji__cell emoji__cell_delete">
+		<span class="emoji__delete" (click)="deleteClick()">✖</span>
+	</div>
+	<div *ngIf="location === 'deleted' || emoji.deleted" class="emoji__cell emoji__cell_recover">
+		<img src="assets/img/undo.svg" class="emoji__recovery" (click)="toggleDeleted()">
+	</div>
+</div>

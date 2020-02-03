@@ -1,0 +1,152 @@
+.emoji {
+	display: flex;
+	height: 50px;
+	padding-right: 5px;
+
+	&__cell {
+		flex-shrink: 0;
+		display: flex;
+		align-items: center;
+
+		&_name {
+			padding: 0 10px;
+		}
+		
+		&_ref {
+			justify-content: center;
+			margin-left: auto;
+			width: 40px;
+
+			@media(min-width: 1200px){
+				margin-left: 0;
+				margin-right: auto;
+				width: auto;
+				padding: 0 10px;
+			}
+		}
+
+		&_pic {
+			width: 45px;
+			justify-content: center;
+		}
+
+		&_fav {
+			justify-content: center;
+			width: 40px;
+		}
+
+		&_delete {
+			justify-content: center;
+			width: 40px;
+		}
+
+		&_recover {
+			justify-content: center;
+			width: 40px;
+		}
+
+	}
+
+	&__text {
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;		
+	}
+
+	&__cell_name &__text {
+		width: 120px;
+
+		$screenWidth: 340;
+		@while $screenWidth < 768 {
+		  @media(min-width: #{$screenWidth}px){
+		  	width: #{$screenWidth - 220}px;
+		  }
+		  $screenWidth: $screenWidth + 20;
+		}
+
+		$screenWidth: 768;
+		@while $screenWidth < 1200 {
+		  @media(min-width: #{$screenWidth}px){
+		  	width: #{$screenWidth - 390}px;
+		  }
+		  $screenWidth: $screenWidth + 20;
+		}
+
+		@media(min-width: 1200px){
+			width: 200px;
+		}
+	}
+
+	&__cell_ref &__text {
+		display: none;
+
+		@media(min-width: 1200px){
+			display: block;
+		}
+
+		$screenWidth: 1200;
+		@while $screenWidth < 1920 {
+		  @media(min-width: #{$screenWidth}px){
+		  	width: #{$screenWidth - 580}px;
+		  }
+		  $screenWidth: $screenWidth + 40;
+		}
+	}
+
+	&__text-ref {
+		text-decoration: none;
+		color: #2196f3;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&__icon-ref {
+
+		@media(min-width: 1200px){
+			display: none;
+		}
+
+		&-pic {
+			width: 18px;
+		}		
+	}
+
+	&__pic {
+		width: 25px;
+		height: 25px;
+		cursor: pointer;
+		transition-property: width, height;
+		transition-duration:.2s;
+
+		&:hover {
+			transition-property: width, height;
+			transition-duration:.2s;
+			width: 64px;
+			height: 64px;
+		}
+	}
+
+	&__star {
+		color: rgba(0,0,0,.4);
+		font-size: 20px;
+		cursor: pointer;
+
+		&_fav {
+			color: #ffca01;
+    		text-shadow: 0 0 1px grey;
+		}
+	}
+
+	&__delete {
+		color: #ef5350;
+		font-size: 20px;
+		cursor: pointer;
+	}
+
+	&__recovery {
+		width: 17px;
+		cursor: pointer;
+	}
+}

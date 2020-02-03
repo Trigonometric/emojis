@@ -1,0 +1,5 @@
+<div class="emoji-list emoji-list_all" infiniteScroll [infiniteScrollDistance]="0.5" [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
+	<ng-container *ngFor="let emo of emojis.slice(0, page * pageSize)">
+		<app-emoji *ngIf="!emo.deleted" [emoji]="emo" location="all" class="emoji-list__item-wrap"></app-emoji>	
+	</ng-container>
+</div>
